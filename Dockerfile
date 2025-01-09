@@ -19,6 +19,8 @@ FROM base AS bolt-ai-production
 
 # Define environment variables with default values or let them be overridden
 ARG GROQ_API_KEY
+ARG DEEPSEEK_API_KEY
+ARG CEREBRAS_API_KEY
 ARG HuggingFace_API_KEY
 ARG OPENAI_API_KEY
 ARG ANTHROPIC_API_KEY
@@ -33,6 +35,8 @@ ARG VITE_LOG_LEVEL=debug
 ARG DEFAULT_NUM_CTX
 
 ENV WRANGLER_SEND_METRICS=false \
+    DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY} \
+    CEREBRAS_API_KEY=${DEEPSEEK_API_KEY} \
     GROQ_API_KEY=${GROQ_API_KEY} \
     HuggingFace_KEY=${HuggingFace_API_KEY} \
     OPENAI_API_KEY=${OPENAI_API_KEY} \
